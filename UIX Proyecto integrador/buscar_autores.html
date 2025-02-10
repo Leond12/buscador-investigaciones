@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Buscar Autores</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+        h1 {
+            color: #333;
+        }
+        .search-container {
+            display: flex;
+            margin-bottom: 20px;
+        }
+        .search-container input[type="text"] {
+            width: 300px;
+            padding: 10px;
+            font-size: 16px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        .search-container button {
+            padding: 10px 20px;
+            font-size: 16px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            margin-left: 10px;
+            cursor: pointer;
+        }
+        .search-container button:hover {
+            background-color: #0056b3;
+        }
+        .results-box {
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            padding: 10px;
+            background-color: white;
+            width: 400px;
+            min-height: 100px;
+            margin-bottom: 20px;
+        }
+        .results-box ul {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+        }
+        .results-box li {
+            padding: 5px 0;
+            border-bottom: 1px solid #eee;
+        }
+        .results-box li:last-child {
+            border-bottom: none;
+        }
+        .new-author-button {
+            padding: 10px 20px;
+            font-size: 16px;
+            background-color: #28a745;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .new-author-button:hover {
+            background-color: #218838;
+        }
+    </style>
+</head>
+<body>
+    <h1>Buscar</h1>
+
+    <!-- Barra de búsqueda y botón -->
+    <div class="search-container">
+        <input type="text" id="search-input" placeholder="Escribe un nombre...">
+        <button id="search-button">Buscar</button>
+    </div>
+
+    <!-- Cuadro de resultados -->
+    <div class="results-box">
+        <ul id="results-list">
+            <!-- Resultados simulados -->
+            <li>Juan Pérez</li>
+            <li>María Gómez</li>
+            <li>Carlos López</li>
+        </ul>
+    </div>
+
+    <!-- Botón para redirigir a registrar_autor.html -->
+    <button class="new-author-button" onclick="window.location.href='registrar_autor.html'">Nuevo autor</button>
+
+    <!-- Script para simular la funcionalidad de búsqueda (opcional) -->
+    <script>
+        document.getElementById('search-button').addEventListener('click', function() {
+            const searchTerm = document.getElementById('search-input').value.toLowerCase();
+            const results = document.querySelectorAll('#results-list li');
+            results.forEach(result => {
+                const text = result.textContent.toLowerCase();
+                if (text.includes(searchTerm)) {
+                    result.style.display = 'block';
+                } else {
+                    result.style.display = 'none';
+                }
+            });
+        });
+    </script>
+</body>
+</html>
