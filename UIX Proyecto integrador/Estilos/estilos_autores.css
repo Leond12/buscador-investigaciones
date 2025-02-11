@@ -22,7 +22,7 @@ h1 {
 }
 
 .section input[type="text"] {
-    width: 100%;
+    width: 65%;
     padding: 10px;
     margin-bottom: 10px;
     border: 1px solid #ccc;
@@ -84,7 +84,7 @@ button:hover {
         padding: 8px 15px;
     }
 
-    .section input[type="text"] {
+    .section input[type="text"], .form-control {
         padding: 8px;
         font-size: 13px;
     }
@@ -101,7 +101,7 @@ button:hover {
         padding: 10px;
     }
 
-    .section input[type="text"] {
+    .section input[type="text"], .form-control {
         padding: 6px;
         font-size: 12px;
     }

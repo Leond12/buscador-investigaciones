@@ -32,6 +32,17 @@ header button:hover {
     background-color: #ee3737;
 }
 
+.logo-container {
+    text-align: center;
+    margin: 20px 0;
+}
+
+.logo-container img {
+    max-width: 500px;  /* Ajusta este valor según el tamaño que desees */
+    width: 100%;
+    height: auto;
+}
+
 .search-container {
     text-align: center;
     margin: 20px 0;
