@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nuevo Archivo</title>
+    <link rel="stylesheet" href="/UIX Proyecto integrador/Estilos/estilos_subir_documento.css">
+</head>
+<body>
+
+    <!-- Pestaña Nuevo Archivo -->
+    <div id="titulox">
+        <h1>Nuevo Archivo</h1>
+        <div class="section">
+            <label>Autor</label>
+            <button onclick="goToSearchAuthor()">Buscar Autor</button>
+            <div class="results-box">
+                <ul id="author-results"></ul>
+            </div>
+        </div>
+
+        <div class="section">
+            <label>Tags</label>
+            <input type="text" id="tags-input" placeholder="Escribe los tags">
+        </div>
+
+        <div class="section">
+            <label>Título</label>
+            <input type="text" id="title-input" placeholder="Escribe el título">
+        </div>
+
+        <div class="section">
+            <label>Titulilla</label>
+            <input type="text" id="subtitle-input" placeholder="Escribe la titulilla">
+        </div>
+
+        <div class="section">
+            <label>Categorías</label>
+            <input type="text" id="categories-input" placeholder="Escribe las categorías">
+        </div>
+
+        <div class="section">
+            <label>Fecha</label>
+            <input type="date" id="date-input">
+        </div>
+
+        <div class="section">
+            <label>Subir archivo</label>
+            <input type="file" id="file-input" accept=".txt,.doc,.docx,.pdf" multiple>
+            <div class="results-box">
+                <ul id="file-list"></ul>
+            </div>
+        </div>
+
+        <button onclick="saveEntry()">Guardar</button>
+        <button onclick="goToHome()">Volver al Inicio</button>
+    </div>
+
+    <script src="/UIX Proyecto integrador/archivos js/subir_documentos.js"></script>
+
+</body>
+</html>
