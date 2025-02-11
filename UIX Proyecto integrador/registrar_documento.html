@@ -5,6 +5,25 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Nuevo Archivo</title>
     <link rel="stylesheet" href="/UIX Proyecto integrador/Estilos/estilos_subir_documento.css">
+    <style>
+        #drop-area {
+            border: 2px dashed #ccc;
+            padding: 20px;
+            text-align: center;
+            background-color: #fafafa;
+            transition: border-color 0.3s;
+        }
+
+        #drop-area.dragover {
+            border-color: #007bff;
+            background-color: #f0f8ff;
+        }
+
+        #drop-area p {
+            margin: 0;
+            color: #888;
+        }
+    </style>
 </head>
 <body>
 
@@ -47,7 +66,8 @@
         <div class="section">
             <label>Subir archivo</label>
             <input type="file" id="file-input" accept=".txt,.doc,.docx,.pdf" multiple>
-            <div class="results-box">
+            <div class="results-box" id="drop-area">
+                <p>Arrastra y suelta los archivos aquí o usa el botón de arriba</p>
                 <ul id="file-list"></ul>
             </div>
         </div>

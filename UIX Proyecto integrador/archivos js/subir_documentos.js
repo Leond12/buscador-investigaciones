@@ -7,6 +7,26 @@ document.getElementById('file-input').addEventListener('change', function(event)
     updateFileList();
 });
 
+// Funcionalidad de arrastrar y soltar archivos
+const dropArea = document.getElementById('drop-area');
+
+dropArea.addEventListener('dragover', (event) => {
+    event.preventDefault();
+    dropArea.style.borderColor = '#007bff';
+});
+
+dropArea.addEventListener('dragleave', () => {
+    dropArea.style.borderColor = '#ccc';
+});
+
+dropArea.addEventListener('drop', (event) => {
+    event.preventDefault();
+    dropArea.style.borderColor = '#ccc';
+    const files = Array.from(event.dataTransfer.files);
+    uploadedFiles.push(...files);
+    updateFileList();
+});
+
 function updateFileList() {
     const fileList = document.getElementById('file-list');
     fileList.innerHTML = uploadedFiles.map((file, index) => `
