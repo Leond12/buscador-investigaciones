@@ -20,19 +20,14 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 });
 
-function addAuthor() {
-    const name = document.getElementById('author-name').value;
-    const surname = document.getElementById('author-surname').value;
-    const ci = document.getElementById('author-ci').value;
-    const code = document.getElementById('author-code').value;
-
-    if (name && surname && ci && code) {
-        authors.push({ name, surname, ci, code });
-        alert('Autor añadido con éxito.');
-        window.location.href = 'buscar_autores.html';
-    } else {
-        alert('Por favor, completa todos los campos.');
-    }
+function updateAuthorResults() {
+    const authorResults = document.getElementById('author-results');
+    authorResults.innerHTML = selectedAuthors.map((author, index) => `
+        <li>
+            ${author.name} ${author.surname}
+            <button class="remove-button" onclick="removeAuthor(${index})">Quitar</button>
+        </li>
+    `).join('');
 }
 
 function searchAuthors() {
@@ -44,8 +39,33 @@ function searchAuthors() {
     );
 
     searchResults.innerHTML = filteredAuthors.map(author => `
-        <li>
-            ${author.name} ${author.surname}
+        <li onclick="selectAuthor('${author.name}', '${author.surname}')">
+             ${author.name} ${author.surname}
         </li>
     `).join('');
+}
+
+function selectAuthor(name, surname) {
+    selectedAuthors.push({ name, surname });
+    updateAuthorResults();
+    window.location.href = 'registrar_documento.html';
+}
+
+function addAuthor() {
+    const name = document.getElementById('author-name').value;
+    const surname = document.getElementById('author-surname').value;
+    const ci = document.getElementById('author-ci').value;
+    const code = document.getElementById('author-code').value;
+
+    if (name && surname && ci && code) {
+        authors.push({ name, surname, ci, code });
+        document.getElementById('author-name').value = '';
+        document.getElementById('author-surname').value = '';
+        document.getElementById('author-ci').value = '';
+        document.getElementById('author-code').value = '';
+        alert('Autor añadido con éxito.');
+        window.location.href = 'buscar_autores.html';
+    } else {
+        alert('Por favor, completa todos los campos.');
+    }
 }
