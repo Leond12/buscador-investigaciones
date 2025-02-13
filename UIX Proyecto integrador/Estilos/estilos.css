@@ -2,7 +2,7 @@ body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
-    background-color: #f4f4f4;
+    background-color: #f8f9fa;
 }
 
 header {
@@ -18,56 +18,20 @@ header img {
     height: 40px;
 }
 
-header button {
-    padding: 10px 20px;
-    font-size: 16px;
-    background-color: #b51010;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-}
-
-header button:hover {
-    background-color: #ee3737;
-}
-
 .logo-container {
     text-align: center;
     margin: 20px 0;
 }
 
 .logo-container img {
-    max-width: 500px;  /* Ajusta este valor según el tamaño que desees */
+    max-width: 500px;
     width: 100%;
     height: auto;
 }
 
 .search-container {
-    text-align: center;
-    margin: 20px 0;
-}
-
-.search-container input[type="text"] {
-    width: 300px;
-    padding: 10px;
-    font-size: 16px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-}
-
-.search-container button {
-    padding: 10px 20px;
-    font-size: 16px;
-    background-color: #b51010;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-}
-
-.search-container button:hover {
-    background-color: #ee3737;
+    margin: 20px auto;
+    max-width: 600px;
 }
 
 .cards-container {
@@ -82,7 +46,7 @@ header button:hover {
     background-color: white;
     border: 1px solid #ccc;
     border-radius: 10px;
-    width: 200px;
+    width: 250px;
     padding: 15px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     text-align: center;
@@ -103,18 +67,10 @@ header button:hover {
     position: fixed;
     bottom: 20px;
     right: 20px;
-    padding: 15px 30px;
     font-size: 16px;
-    background-color: #b51010;
-    color: white;
-    border: none;
     border-radius: 50px;
     cursor: pointer;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-}
-
-.upload-button:hover {
-    background-color: #ee3737;
 }
 
 /* Estilos responsive */
@@ -128,10 +84,6 @@ header button:hover {
         margin-bottom: 10px;
     }
 
-    .search-container input[type="text"] {
-        width: 80%;
-    }
-
     .cards-container {
         padding: 10px;
         gap: 10px;
@@ -141,110 +93,11 @@ header button:hover {
         width: 100%;
         max-width: 300px;
     }
-
-    .upload-button {
-        padding: 10px 20px;
-        font-size: 14px;
-    }
 }
 
 @media (max-width: 480px) {
-    .search-container input[type="text"] {
-        width: 100%;
-    }
-
     header button {
         width: 100%;
         padding: 10px;
-    }
-}
-
-#main-login {
-    height: 100vh;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-}
-
-.card {
-    width: 100%;
-    max-width: 400px;
-    padding: 20px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    border-radius: 10px;
-    background-color: white;
-}
-
-.btn-primary {
-    background-color: #b51010;
-    border: none;
-    border-radius: 5px;
-    padding: 10px;
-    color: white;
-    font-size: 16px;
-    cursor: pointer;
-}
-
-.btn-primary:hover {
-    background-color: #ee3737;
-}
-
-.btn-secondary {
-    background-color: #555;
-    border: none;
-    border-radius: 5px;
-    padding: 10px 20px;
-    color: white;
-    font-size: 16px;
-    cursor: pointer;
-}
-
-.btn-secondary:hover {
-    background-color: #777;
-}
-
-.form-check-label {
-    font-size: 14px;
-    color: #555;
-}
-
-a.text-decoration-none {
-    color: #b51010;
-}
-
-a.text-decoration-none:hover {
-    color: #ee3737;
-}
-
-/* Estilos responsive para el login */
-@media (max-width: 768px) {
-    #main-login {
-        padding: 10px;
-    }
-
-    .card {
-        padding: 15px;
-    }
-
-    .btn-primary, .btn-secondary {
-        font-size: 14px;
-        padding: 8px 15px;
-    }
-}
-
-@media (max-width: 480px) {
-    .card {
-        padding: 10px;
-    }
-
-    .btn-primary, .btn-secondary {
-        width: 100%;
-        padding: 10px;
-        font-size: 14px;
-    }
-
-    .form-check-label {
-        font-size: 12px;
     }
 }

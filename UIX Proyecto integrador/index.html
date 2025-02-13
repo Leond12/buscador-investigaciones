@@ -4,47 +4,34 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Inicio - Gestión de Documentos</title>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="/UIX Proyecto integrador/css/bootstrap.min.css">
     <link rel="stylesheet" href="/UIX Proyecto integrador/Estilos/estilos.css">
 </head>
 <body>
     <!-- Encabezado -->
-    <header>
-        <img src="/UIX Proyecto integrador/imagenes/utepsa_logo.jpg" alt="Logo">
-        <button onclick="window.location.href='login.html'">Acceder</button>
+    <header class="d-flex justify-content-between align-items-center p-3 bg-danger text-white">
+        <img src="/UIX Proyecto integrador/imagenes/utepsa_logo.jpg" alt="Logo" class="img-fluid" style="height: 40px;">
+        <button class="btn btn-light" onclick="window.location.href='login.html'">Acceder</button>
     </header>
 
     <!-- Logo adicional -->
-    <div class="logo-container">
-        <img src="/UIX Proyecto integrador/imagenes/utepsa_logo_mayor.png" alt="Logo UTEPSA Mayor">
+    <div class="logo-container text-center my-4">
+        <img src="/UIX Proyecto integrador/imagenes/utepsa_logo_mayor.png" alt="Logo UTEPSA Mayor" class="img-fluid" style="max-width: 500px;">
     </div>
 
     <!-- Barra de búsqueda -->
-    <div class="search-container">
-        <input type="text" id="search-input" placeholder="Buscar documento...">
-        <button id="search-button">Buscar</button>
-    </div>
-     <!-- Tarjetas de presentación 
-    <div class="cards-container" id="cards-container">
-        <div class="card" data-name="Tesis de Ingeniería">
-            <h3>Tesis de Ingeniería</h3>
-            <p>Autor: Juan Pérez</p>
+    <div class="container my-3">
+        <div class="input-group">
+            <input type="text" id="search-input" class="form-control" placeholder="Buscar documento...">
+            <button id="search-button" class="btn btn-danger">Buscar</button>
         </div>
-        <div class="card" data-name="Proyecto de Matemáticas">
-            <h3>Proyecto de Matemáticas</h3>
-            <p>Autor: María Gómez</p>
-        </div>
-        <div class="card" data-name="Informe de Laboratorio">
-            <h3>Informe de Laboratorio</h3>
-            <p>Autor: Carlos López</p>
-        </div>
-        <div class="card" data-name="Presentación de Marketing">
-            <h3>Presentación de Marketing</h3>
-            <p>Autor: Ana Torres</p>
-        </div>-->
     </div>
 
     <!-- Botón "Subir documento" -->
-    <button class="upload-button" onclick="window.location.href='registrar_documento.html'">Subir documento</button>
+    <button class="upload-button btn btn-danger rounded-circle position-fixed bottom-0 end-0 m-4 p-3 shadow" onclick="window.location.href='registrar_documento.html'">
+        Subir documento
+    </button>
 
     <!-- Script para filtrar tarjetas -->
     <script>
@@ -61,5 +48,7 @@
             });
         });
     </script>
+    <!-- Bootstrap JS -->
+    <script src="/UIX Proyecto integrador/css/bootstrap.bundle.min.js"></script>
 </body>
 </html>
