@@ -322,4 +322,61 @@ body {
             font-size: 12px;
         }
     }
+    /* 🔹 Fijar los botones en la parte inferior derecha */
+.fixed-buttons-container {
+    position: fixed;  /* Fija la posición en la pantalla */
+    bottom: 20px;     /* Distancia desde la parte inferior */
+    right: 20px;      /* Distancia desde la derecha */
+    display: flex;
+    flex-direction: column;
+    gap: 10px;        /* Espaciado entre botones */
+    z-index: 1000;    /* Asegura que estén siempre visibles */
+}
+
+/* 🔘 Estilos de botones */
+.fixed-buttons-container button {
+    width: 160px;         /* Tamaño uniforme */
+    font-weight: bold;    /* Texto más llamativo */
+    padding: 10px 15px;
+    border-radius: 5px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Agrega sombra ligera */
+    border: none;
+}
+
+/* 🎨 Personalización de colores */
+#registrar-button {
+    background-color: white;
+    color: #b51010;
+    border: 2px solid #b51010;
+}
+
+#registrar-button:hover {
+    background-color: #b51010;
+    color: white;
+}
+
+/* 🔴 Botón "Subir Documento" */
+#upload-button {
+    background-color: #b51010;
+    color: white;
+}
+
+#upload-button:hover {
+    background-color: #d32f2f;
+}
+
+/* 📱 Ajuste para pantallas más pequeñas */
+@media (max-width: 768px) {
+    .fixed-buttons-container {
+        right: 10px;  /* Ajusta margen para pantallas pequeñas */
+        bottom: 10px;
+    }
+
+    .fixed-buttons-container button {
+        width: 140px;
+        font-size: 14px;
+    }
+}
+
+
 }
