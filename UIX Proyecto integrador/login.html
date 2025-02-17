@@ -4,15 +4,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login</title>
-    <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="/UIX Proyecto integrador/css/bootstrap.min.css">
     <link rel="stylesheet" href="/UIX Proyecto integrador/Estilos/estilo_registrar_usuario.css">
 </head>
-<body class="d-flex align-items-center justify-content-center vh-100 bg-light">
-
-  <main class="container text-center">
-    <div class="card shadow-lg p-4 mx-auto" style="max-width: 400px;">
-        <h2 class="mb-4">Iniciar Sesión</h2>
+<body>
+  <main id="main-create-user" class="container d-flex justify-content-center align-items-center vh-100">
+    <div class="card p-4 shadow-lg w-50">
+        <h2 class="text-center">Iniciar Sesión</h2>
         <form>
             <div class="mb-3">
                 <label for="email_username" class="form-label">Usuario</label>
@@ -21,23 +19,21 @@
             <div class="mb-3">
                 <label for="pass" class="form-label">Contraseña</label>
                 <input type="password" name="pass" id="pass-login" class="form-control" placeholder="Ingresa tu contraseña">
-                <div class="form-check mt-2">
+                <div class="form-check">
                     <input class="form-check-input" type="checkbox" id="show-password-login">
                     <label class="form-check-label" for="show-password-login">Mostrar contraseña</label>
                 </div>
             </div>
-            <button type="submit" class="btn btn-danger w-100">Iniciar Sesión</button>
+            <div class="text-center">
+                <button type="submit" class="btn btn-primary w-100">Iniciar Sesión</button>
+            </div>
         </form>
-        <div class="mt-3">
-            <a href="#" class="text-decoration-none text-danger">Olvidé mi contraseña</a>
+        <div class="text-center mt-3">
+            <a href="index.html" class="btn btn-secondary">Volver</a>
         </div>
     </div>
-    <p class="mt-4">¿No tienes una cuenta?</p>
-    <a href="registrar_usuario.html" class="btn btn-secondary">Crear Usuario</a>
   </main>
 
-  <!-- Bootstrap JS -->
-  <script src="/UIX Proyecto integrador/css/bootstrap.bundle.min.js"></script>
-
+  <script src="archivos js/funciones.js" defer></script>
 </body>
 </html>

@@ -4,51 +4,40 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Inicio - Gestión de Documentos</title>
-    <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="/UIX Proyecto integrador/css/bootstrap.min.css">
     <link rel="stylesheet" href="/UIX Proyecto integrador/Estilos/estilos.css">
 </head>
-<body>
-    <!-- Encabezado -->
-    <header class="d-flex justify-content-between align-items-center p-3 bg-danger text-white">
-        <img src="/UIX Proyecto integrador/imagenes/utepsa_logo.jpg" alt="Logo" class="img-fluid" style="height: 40px;">
-        <button class="btn btn-light" onclick="window.location.href='login.html'">Acceder</button>
+<body class="container text-center">
+    <header class="d-flex justify-content-between align-items-center py-3">
+        <img src="imagenes/utepsa_logo.jpg" alt="Logo" class="img-fluid" style="max-height: 60px;">
+        <div class="d-flex">
+            <h3 id="rol1" class="mx-2">Administrador</h3>
+            <h3 id="rol2" class="mx-2">Tutor</h3>
+            <h3 id="rol3" class="mx-2">Estudiante</h3>
+            <h3 id="rol4" class="mx-2">Invitado</h3>
+        </div>
+        <div>
+            <button id="login-button" class="btn btn-primary" onclick="window.location.href='login.html'">Acceder</button>
+            <button id="logout-button" class="btn btn-danger" onclick="cerrarSesion()" style="display:none;">Cerrar Sesión</button>
+        </div>
     </header>
 
-    <!-- Logo adicional -->
-    <div class="logo-container text-center my-4">
-        <img src="/UIX Proyecto integrador/imagenes/utepsa_logo_mayor.png" alt="Logo UTEPSA Mayor" class="img-fluid" style="max-width: 500px;">
+    <div class="logo-container my-4">
+        <img src="imagenes/utepsa_logo_mayor.png" alt="Logo UTEPSA Mayor" class="img-fluid">
     </div>
 
-    <!-- Barra de búsqueda -->
-    <div class="container my-3">
-        <div class="input-group">
-            <input type="text" id="search-input" class="form-control" placeholder="Buscar documento...">
-            <button id="search-button" class="btn btn-danger">Buscar</button>
-        </div>
+    <div class="search-container input-group mb-3">
+        <input type="text" id="search-input" class="form-control" placeholder="Buscar documento...">
+        <button id="search-button" class="btn btn-success" onclick="searchDocuments()">Buscar</button>
     </div>
 
-    <!-- Botón "Subir documento" -->
-    <button class="upload-button btn btn-danger rounded-circle position-fixed bottom-0 end-0 m-4 p-3 shadow" onclick="window.location.href='registrar_documento.html'">
-        Subir documento
-    </button>
+    <div id="search-results" class="search-results-container"></div>
 
-    <!-- Script para filtrar tarjetas -->
-    <script>
-        document.getElementById('search-button').addEventListener('click', function() {
-            const searchTerm = document.getElementById('search-input').value.toLowerCase();
-            const cards = document.querySelectorAll('.card');
-            cards.forEach(card => {
-                const cardName = card.getAttribute('data-name').toLowerCase();
-                if (cardName.includes(searchTerm)) {
-                    card.style.display = 'block';
-                } else {
-                    card.style.display = 'none';
-                }
-            });
-        });
-    </script>
-    <!-- Bootstrap JS -->
-    <script src="/UIX Proyecto integrador/css/bootstrap.bundle.min.js"></script>
+    <div class="d-grid gap-2 d-md-flex justify-content-md-center my-3">
+        <button id="registrar-button" class="btn btn-warning" onclick="window.location.href='registrar_usuario.html'" style="display:none;">Crear Cuenta</button>
+        <button id="upload-button" class="btn btn-info" onclick="window.location.href='registrar_documento.html'" style="display:none;">Subir documento</button>
+    </div>
+
+    <script src="archivos js/funciones.js"></script>
 </body>
 </html>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Añadir Autor</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="Estilos/estilos_autores.css">
+</head>
+<body class="bg-light d-flex justify-content-center align-items-center vh-100">
+
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-md-6">
+                <div class="card shadow p-4">
+                    <h2 class="text-center mb-4">Añadir Autor</h2>
+                    
+                    <div class="mb-3">
+                        <label for="author-name" class="form-label">Nombre</label>
+                        <input type="text" class="form-control" id="author-name" placeholder="Escribe el nombre">
+                    </div>
+                    
+                    <div class="mb-3">
+                        <label for="author-surname" class="form-label">Apellido</label>
+                        <input type="text" class="form-control" id="author-surname" placeholder="Escribe el apellido">
+                    </div>
+                    
+                    <div class="mb-3">
+                        <label for="author-ci" class="form-label">CI</label>
+                        <input type="text" class="form-control" id="author-ci" placeholder="Escribe el CI">
+                    </div>
+                    
+                    <div class="mb-3">
+                        <label for="author-code" class="form-label">Código U</label>
+                        <input type="text" class="form-control" id="author-code" placeholder="Escribe el código U">
+                    </div>
+
+                    <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+                        <button class="btn btn-primary" onclick="addAuthor()">Añadir</button>
+                        <button class="btn btn-secondary" onclick="goToSearchAuthor()">Cancelar</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="archivos js/funciones.js"></script>
+</body>
+</html>

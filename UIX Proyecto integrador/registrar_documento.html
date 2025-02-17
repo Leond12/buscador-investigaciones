@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Nuevo Archivo</title>
-    <link rel="stylesheet" href="/UIX Proyecto integrador/Estilos/estilos_subir_documento.css">
+    <link rel="stylesheet" href="Estilos\estilos_subir_documento.css">
     <style>
         #drop-area {
             border: 2px dashed #ccc;
@@ -29,30 +29,23 @@
 
     <!-- Pestaña Nuevo Archivo -->
 
-    <!--
-    -Autor -
-    -Tutor -
-    -Titulo -
-    -Titulillo -
-    -Tags -
-    -Categorias -
-    -Universidad -
-    -Facultad -
-    -Materia -
-    -Archivo 
-    -->
-
     <div id="titulo">
         <h1>Nuevo Archivo</h1>
+        
         <div class="section">
             <label>Autor</label>
             <button onclick="goToSearchAuthor()">Buscar Autor</button>
         </div>
             <div class="section">
+                <label>Autores Seleccionados</label>
+            </div>
+            <div class="section">
                 <div class="results-box">
                     <ul id="author-results"></ul>
             </div>
         </div>
+        
+        
 
         <div class="section">
             <label>Tutor</label>
@@ -108,7 +101,7 @@
         <button onclick="goToHome()">Volver al Inicio</button>
     </div>
 
-    <script src="/UIX Proyecto integrador/archivos js/subir_documentos.js"></script>
+    <script src="archivos js/funciones.js"></script>
 
 </body>
 </html>

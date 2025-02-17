@@ -1,0 +1,100 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+}
+
+header {
+    background-color: #b51010;
+    color: white;
+    text-align: center;
+    padding: 15px;
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.document-container {
+    max-width: 800px;
+    margin: 20px auto;
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.document-container h1 {
+    font-size: 26px;
+    color: #333;
+    border-bottom: 2px solid #ddd;
+    padding-bottom: 10px;
+}
+
+.document-container p {
+    font-size: 16px;
+    margin: 10px 0;
+    color: #555;
+}
+
+.document-container strong {
+    color: #222;
+}
+
+.document-container ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.document-container ul li {
+    background: #f8f8f8;
+    margin: 5px 0;
+    padding: 10px;
+    border-radius: 5px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.document-container ul li a {
+    color: #b51010;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.document-container ul li a:hover {
+    text-decoration: underline;
+}
+
+button {
+    display: block;
+    width: fit-content;
+    margin: 20px auto;
+    padding: 10px 15px;
+    background-color: #b51010;
+    color: white;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+    border-radius: 5px;
+}
+button:hover {
+    background-color: #ee3737;
+}
+.edit-button {
+    display: block;
+    width: fit-content;
+    margin: 20px auto;
+    padding: 10px 15px;
+    background-color: #23b510;
+    color: white;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+    border-radius: 5px;
+}
+
+.edit-button:hover {
+    background-color: #37ee55;
+}
+
+
