@@ -1,0 +1,154 @@
+
+-- Creación de la base de datos
+CREATE DATABASE IF NOT EXISTS gestion_documentos;
+USE gestion_documentos;
+
+-- Tabla Usuario
+CREATE TABLE Usuario (
+    id_usuario INT AUTO_INCREMENT PRIMARY KEY,
+    nombre VARCHAR(100) NOT NULL,
+    cargo VARCHAR(50),
+    usuario VARCHAR(50) UNIQUE NOT NULL,
+    contrasena VARCHAR(255) NOT NULL,
+    fecha_registro DATE
+);
+
+-- Tabla Categoria
+CREATE TABLE categoria (
+    id_categoria INT AUTO_INCREMENT PRIMARY KEY,
+    nombre VARCHAR(100) NOT NULL,
+    descripcion TEXT
+);
+
+-- Tabla Tag
+CREATE TABLE tag (
+    id_tag INT AUTO_INCREMENT PRIMARY KEY,
+    nombre VARCHAR(100) NOT NULL
+);
+
+-- Tabla Autores
+CREATE TABLE Autores (
+    id_Autores INT AUTO_INCREMENT PRIMARY KEY,
+    nombre VARCHAR(100),
+    apellido VARCHAR(100),
+    ci VARCHAR(15),
+    codigo_u VARCHAR(15)
+);
+
+-- Tabla Documento
+CREATE TABLE Documento (
+    id_documento INT AUTO_INCREMENT PRIMARY KEY,
+    id_usuario INT,
+    titulo VARCHAR(255) NOT NULL,
+    titulo_largo TEXT,
+    nombre_archivo VARCHAR(255),
+    universidad VARCHAR(100),
+    facultad VARCHAR(100),
+    materia VARCHAR(100),
+    tutor VARCHAR(100),
+    fecha_subida DATE,
+    descripcion TEXT,
+    ruta VARCHAR(255),
+    tamano_archivo BIGINT,
+    tipo_archivo VARCHAR(50),
+    nro_vistas INT,
+    FOREIGN KEY (id_usuario) REFERENCES Usuario(id_usuario) ON DELETE SET NULL
+);
+
+-- Tabla Documento_Autores
+CREATE TABLE Documento_Autores (
+    id_documento_autores INT AUTO_INCREMENT PRIMARY KEY,
+    id_documento INT,
+    id_Autores INT,
+    FOREIGN KEY (id_documento) REFERENCES Documento(id_documento) ON DELETE CASCADE,
+    FOREIGN KEY (id_Autores) REFERENCES Autores(id_Autores) ON DELETE CASCADE
+);
+
+-- Tabla Documento_Categoria
+CREATE TABLE Documento_Categoria (
+    id_documento_categoria INT AUTO_INCREMENT PRIMARY KEY,
+    id_Documento INT,
+    id_Categoria INT,
+    FOREIGN KEY (id_Documento) REFERENCES Documento(id_documento) ON DELETE CASCADE,
+    FOREIGN KEY (id_Categoria) REFERENCES categoria(id_categoria) ON DELETE CASCADE
+);
+
+-- Tabla Documento_Tag
+CREATE TABLE Documento_Tag (
+    id_documento_tag INT AUTO_INCREMENT PRIMARY KEY,
+    id_documento INT,
+    id_tag INT,
+    FOREIGN KEY (id_documento) REFERENCES Documento(id_documento) ON DELETE CASCADE,
+    FOREIGN KEY (id_tag) REFERENCES tag(id_tag) ON DELETE CASCADE
+);
+
+
+
+==================================================================================================
+poblacion
+==================================================================================================
+
+-- Poblar Tabla Usuario
+INSERT INTO Usuario (nombre, cargo, usuario, contrasena, fecha_registro) VALUES
+('Juan Pérez', 'Administrador', 'juanp', 'password123', '2024-01-01'),
+('María López', 'Editor', 'marial', 'password123', '2024-01-02'),
+('Carlos Sánchez', 'Usuario', 'carloss', 'password123', '2024-01-03'),
+('Ana Gómez', 'Usuario', 'anag', 'password123', '2024-01-04'),
+('Luis Torres', 'Editor', 'luist', 'password123', '2024-01-05');
+
+-- Poblar Tabla Categoria
+INSERT INTO categoria (nombre, descripcion) VALUES
+('Investigación', 'Documentos de investigación académica'),
+('Proyecto', 'Proyectos universitarios finales'),
+('Tesis', 'Tesis de grado y postgrado'),
+('Ensayo', 'Ensayos académicos de distintas disciplinas'),
+('Informe', 'Informes técnicos y científicos');
+
+-- Poblar Tabla Tag
+INSERT INTO tag (nombre) VALUES
+('Tecnología'),
+('Ciencia'),
+('Salud'),
+('Educación'),
+('Medio Ambiente');
+
+-- Poblar Tabla Autores
+INSERT INTO Autores (nombre, apellido, ci, codigo_u) VALUES
+('Pedro', 'Martínez', '112233', '998877'),
+('Laura', 'Fernández','223344', '887766'),
+('Javier', 'García', '334455', '776655'),
+('Sofía', 'Hernández', '445566', '665544'),
+('Diego', 'Ruiz', '556677', '554433');
+
+-- Poblar Tabla Documento
+INSERT INTO Documento (id_usuario, titulo, titulo_largo, nombre_archivo, universidad, facultad, materia, tutor, fecha_subida, descripcion, ruta, tamano_archivo, tipo_archivo,nro_vistas) VALUES
+(1, 'Estudio de Redes', 'Estudio de Redes de Computadoras en Entornos Universitarios', 'redes.pdf', 'Universidad Nacional', 'Ingeniería', 'Programación', 'Dr. Roberto Díaz', '2024-02-01', 'Un estudio detallado de redes.', '/archivos/redes.pdf', 204800, 'pdf', 10),
+(2, 'Impacto Ambiental', 'Análisis del Impacto Ambiental en Zonas Urbanas', 'impacto.pdf', 'Universidad de la Ciudad', 'Ciencias', 'Física', 'Dra. Ana López', '2024-02-02', 'Impacto ambiental urbano.', '/archivos/impacto.pdf', 307200, 'pdf', 20),
+(3, 'Inteligencia Artificial', 'Desarrollo de Algoritmos de IA', 'ia.pdf', 'Universidad Técnica', 'Tecnología', 'Redes', 'Dr. Carlos Rivera', '2024-02-03', 'Algoritmos de IA en la actualidad.', '/archivos/ia.pdf', 512000, 'pdf', 30),
+(4, 'Historia Moderna', 'La Evolución de la Sociedad Moderna', 'historia.pdf', 'Universidad Central', 'Humanidades', 'Historia', 'Dra. Lucía Torres', '2024-02-04', 'Sociedades modernas y su evolución.', '/archivos/historia.pdf', 256000, 'pdf', 40),
+(5, 'Derecho Penal', 'Estudios sobre Derecho Penal Comparado', 'derecho.pdf', 'Universidad Autónoma', 'Derecho', 'Legislación', 'Dr. Fernando Pérez', '2024-02-05', 'Derecho penal internacional.', '/archivos/derecho.pdf', 150000, 'pdf', 50);
+
+-- Poblar Tabla Documento_Autores
+INSERT INTO Documento_Autores (id_documento, id_Autores) VALUES
+(1, 1),
+(2, 2),
+(3, 3),
+(4, 4),
+(5, 5);
+
+-- Poblar Tabla Documento_Categoria
+INSERT INTO Documento_Categoria (id_Documento, id_Categoria) VALUES
+(1, 1),
+(2, 2),
+(3, 3),
+(4, 4),
+(5, 5);
+
+-- Poblar Tabla Documento_Tag
+INSERT INTO Documento_Tag (id_documento, id_tag) VALUES
+(1, 1),
+(2, 2),
+(3, 3),
+(4, 4),
+(5, 5);
+

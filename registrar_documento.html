@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nuevo Archivo</title>
+    <link rel="stylesheet" href="Estilos/estilos_subir_documento.css">
+</head>
+<body>
+
+    <div id="nuevo-archivo" class="section">
+        <h1 style="color: #333; text-align: center; margin-bottom: 20px;">Nuevo Archivo</h1>
+        
+        <div class="section">
+            <label>Autor</label>
+            <button class="btn-danger" onclick="goToSearchAuthor()">Buscar Autor</button>
+        </div>
+
+        <div class="section">
+            <label>Autores Seleccionados</label>
+            <div class="results-box">
+                <ul id="author-results"></ul>
+            </div>
+        </div>
+
+        <div class="section">
+            <label>Tutor</label>
+            <input type="text" id="tutor-input" class="form-control" placeholder="Nombre de Tutor">
+        </div>
+
+        <div class="section">
+            <label>Título</label>
+            <input type="text" id="title-input" class="form-control" placeholder="Escribe el título">
+        </div>
+
+        <div class="section">
+            <label>Titulillo</label>
+            <input type="text" id="subtitle-input" class="form-control" placeholder="Escribe el titulillo">
+        </div>
+
+        <div class="section">
+            <label>Tags</label>
+            <div class="flex-container">
+                <select id="tags-select" multiple class="form-control"></select>
+                <button class="btn-danger" onclick="addNewTag()">Añadir Tag</button>
+            </div>
+        </div>
+
+        <div class="section">
+            <label>Tags Seleccionados</label>
+            <ul id="selected-tags" class="results-box"></ul>
+        </div>
+
+        <div class="section">
+            <label>Categorías</label>
+            <select id="categories-select" class="form-control">
+                <option value="">Selecciona una categoría</option>
+            </select>
+        </div>
+
+        <div class="section">
+            <label>Universidad</label>
+            <input type="text" id="universidad-input" class="form-control" placeholder="Escribe la universidad">
+        </div>
+
+        <div class="section">
+            <label>Facultad</label>
+            <input type="text" id="facultad-input" class="form-control" placeholder="Escribe la facultad">
+        </div>
+
+        <div class="section">
+            <label>Materia</label>
+            <input type="text" id="materia-input" class="form-control" placeholder="Escribe la materia">
+        </div>
+
+        <div class="section">
+            <label>Descripción</label>
+            <input type="text" id="descripcion-input" class="form-control" placeholder="Escribe la descripción">
+        </div>
+
+        <div class="section">
+            <label>Subir archivo</label>
+            <input type="file" id="file-input" class="form-control" accept=".txt,.doc,.docx,.pdf" multiple>
+            <div class="results-box" id="drop-area">
+                <p>Arrastra y suelta los archivos aquí o usa el botón de arriba</p>
+                <ul id="file-list"></ul>
+            </div>
+        </div>
+
+        <div class="d-grid gap-2 mt-3 d-md-flex justify-content-md-end">
+            <button class="btn-danger" onclick="guardarDoc()">Guardar</button>
+            <button class="btn-secondary" onclick="goToHome()">Volver al Inicio</button>
+        </div>
+    </div>
+
+    <script src="./Archivos js/registrar_documento.js"></script>
+    <script src="Archivos js/funciones.js"></script>
+    <script src="./Archivos js/scrip_buscar_autores.js"></script>
+    <script src="./Archivos js/buscar_categoria.js"></script>
+    <script src="./Archivos js/scrip_tag.js"></script>
+
+</body>
+</html>
+

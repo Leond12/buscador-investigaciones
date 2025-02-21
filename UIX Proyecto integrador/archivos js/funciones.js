@@ -142,6 +142,7 @@ function togglePasswordVisibilityRegister() {
 /**
  * Función para manejar el inicio de sesión
  */
+
 function iniciarSesion(event) {
     event.preventDefault();
 
@@ -167,11 +168,18 @@ function iniciarSesion(event) {
 /**
  * Función para cerrar sesión
  */
+
 function cerrarSesion() {
-    localStorage.removeItem("sesionIniciada");
-    alert("Sesión cerrada");
-    window.location.href = "index.html"; // Recargar la página para mostrar los cambios
+    fetch("php/logout.php", { method: "GET", cache: "no-store" })
+        .then(() => {
+            localStorage.clear(); // Borra cualquier dato guardado en LocalStorage
+            alert("Sesión cerrada correctamente.");
+            window.location.href = "index.html"; // Redirige a index.html
+        })
+        .catch(error => console.error("Error al cerrar sesión:", error));
 }
+
+
 //---------------------------------------------------------------------
 /**
  * Función para actualizar la interfaz de usuario según el estado de sesión
@@ -425,6 +433,13 @@ function searchAuthors() {
 /**
  * Agrega un autor a la lista de autores seleccionados en localStorage
  */
+function selectAuthor(name, surname) {
+    let selectedAuthors = JSON.parse(localStorage.getItem("selectedAuthors")) || [];
+    selectedAuthors.push({ name, surname });
+    localStorage.setItem("selectedAuthors", JSON.stringify(selectedAuthors));
+    window.location.href = "registrar_documento.html";
+}
+/***Agregar una nueva categoria a la lista  */
 function selectAuthor(name, surname) {
     let selectedAuthors = JSON.parse(localStorage.getItem("selectedAuthors")) || [];
     selectedAuthors.push({ name, surname });

@@ -1,46 +1,82 @@
+/* 🎨 Fondo con degradado */
 body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 20px;
-    background-color: #f4f4f4;
+    background: linear-gradient(135deg, #b51010, #353535);
+    color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 100vh;
 }
 
+/* 🏷️ Estilos del título principal */
 h1 {
-    color: #333;
+    color: white;
     text-align: center;
-    margin-bottom: 20px;
-}
-
-.section {
-    margin-bottom: 20px;
-}
-
-.section label {
-    display: block;
+    font-size: 26px;
     font-weight: bold;
+    margin-bottom: 20px;
+}
+
+/* 📌 Sección principal */
+.section {
+    width: 95%; /* Se amplió para acercarse más al borde derecho */
+    max-width: 800px; /* Ajustado el ancho máximo */
+    background: white;
+    padding: 15px; /* Ligeramente aumentado el padding */
+    border-radius: 8px;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+    margin-bottom: 10px;
+}
+
+/* 🏷️ Estilos para etiquetas e inputs */
+.section label {
+    font-weight: bold;
+    color: #333;
+    display: block;
     margin-bottom: 5px;
 }
 
+/* 🖊 Inputs y Select */
 .section input[type="text"],
 .section input[type="date"],
-.section input[type="file"] {
-    width: 80%;
+.section input[type="file"],
+.section select {
+    width: 98%; /* Se expandió más para llenar la sección */
     padding: 10px;
-    margin-bottom: 10px;
+    margin-bottom: 8px;
+    border-radius: 5px;
     border: 1px solid #ccc;
-    border-radius: 5px;
     font-size: 14px;
+    transition: all 0.3s ease-in-out;
 }
 
+/* 🔵 Efecto de foco en inputs */
+.section input[type="text"]:focus,
+.section input[type="date"]:focus,
+.section input[type="file"]:focus,
+.section select:focus {
+    border-color: #b51010;
+    outline: none;
+    box-shadow: 0px 0px 3px rgba(181, 16, 16, 0.3);
+}
+
+/* 📦 Caja de resultados */
 .results-box {
-    border: 2px solid #ccc;
-    padding: 20px;
-    background-color: #fff;
-    border-radius: 5px;
-    height: 150px;
+    border: 1px solid #ccc;
+    padding: 8px;
+    background-color: gray;
+    border-radius: 6px;
+    width: 98%; /* Ahora es más ancha */
+    min-height: 50px;
+    max-height: 120px;
     overflow-y: auto;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
 }
 
+/* 📋 Lista de elementos en resultados */
 .results-box ul {
     list-style-type: none;
     padding: 0;
@@ -50,41 +86,105 @@ h1 {
 .results-box li {
     padding: 5px;
     border-bottom: 1px solid #eee;
+    font-size: 14px;
     display: flex;
     justify-content: space-between;
     align-items: center;
 }
 
+/* 📌 Último elemento sin borde */
 .results-box li:last-child {
     border-bottom: none;
 }
 
-button {
-    padding: 10px 20px;
+/* 🟢 Contenedor flexible para select + botón */
+.flex-container {
+    display: flex;
+    gap: 6px;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+/* 🟥 Corrección del botón "Buscar Autor" */
+.btn-danger {
+    display: inline-block;
     background-color: #b51010;
-    color: white;
     border: none;
     border-radius: 5px;
+    padding: 8px 12px;
+    color: white;
+    text-align: center;
+    font-size: 13px;
+    font-weight: bold;
     cursor: pointer;
-    font-size: 16px;
+    width: auto;
+    transition: all 0.3s ease-in-out;
 }
 
-button:hover {
-    background-color: #ee3737;
+.btn-danger:hover {
+    background-color: #a30e0e;
+    transform: scale(1.03);
 }
 
+/* 🔄 Botón secundario */
+.btn-secondary {
+    background-color: #555;
+    border: none;
+    border-radius: 5px;
+    padding: 8px 12px;
+    color: white;
+    font-size: 13px;
+    font-weight: bold;
+    cursor: pointer;
+    width: auto;
+    transition: all 0.3s ease-in-out;
+}
+
+.btn-secondary:hover {
+    background-color: #777;
+    transform: scale(1.03);
+}
+
+/* ❌ Botón de eliminar archivo */
 .remove-button {
     background-color: #ff4d4d;
-    padding: 5px 10px;
+    padding: 6px 10px;
     font-size: 12px;
     border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+    border: none;
+    color: white;
 }
 
 .remove-button:hover {
     background-color: #cc0000;
+    transform: scale(1.05);
 }
 
-/* Estilos responsive */
+/* 📦 Área de arrastrar archivos */
+#drop-area {
+    border: 2px dashed #ccc;
+    padding: 12px;
+    text-align: center;
+    background-color: #fafafa;
+    transition: border-color 0.3s;
+    border-radius: 6px;
+    width: 98%;
+}
+
+#drop-area.dragover {
+    border-color: #b51010;
+    background-color: #f0f8ff;
+}
+
+#drop-area p {
+    margin: 0;
+    color: #888;
+    font-size: 12px;
+}
+
+/* 📱 Estilos responsive */
 @media (max-width: 768px) {
     body {
         padding: 10px;
@@ -94,16 +194,36 @@ button:hover {
         font-size: 22px;
     }
 
-    button {
-        font-size: 14px;
-        padding: 8px 15px;
+    .section {
+        width: 98%;
+        padding: 12px;
+    }
+
+    .flex-container {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .btn-danger,
+    .btn-secondary {
+        width: 100%;
+        font-size: 13px;
+        padding: 8px;
     }
 
     .section input[type="text"],
     .section input[type="date"],
-    .section input[type="file"] {
+    .section input[type="file"],
+    .section select {
         padding: 8px;
-        font-size: 13px;
+        font-size: 12px;
+        width: 96%;
+    }
+
+    .results-box {
+        min-height: 40px;
+        max-height: 100px;
+        width: 96%;
     }
 }
 
@@ -112,20 +232,31 @@ button:hover {
         font-size: 20px;
     }
 
-    button, .remove-button {
-        width: 100%;
-        font-size: 14px;
+    .section {
+        width: 98%;
         padding: 10px;
+    }
+
+    .btn-danger,
+    .btn-secondary,
+    .remove-button {
+        width: 100%;
+        font-size: 13px;
+        padding: 8px;
     }
 
     .section input[type="text"],
     .section input[type="date"],
-    .section input[type="file"] {
+    .section input[type="file"],
+    .section select {
         padding: 6px;
-        font-size: 12px;
+        font-size: 11px;
+        width: 94%;
     }
 
     .results-box {
-        height: 120px;
+        min-height: 40px;
+        max-height: 100px;
+        width: 94%;
     }
 }

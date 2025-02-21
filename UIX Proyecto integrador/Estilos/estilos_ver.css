@@ -1,10 +1,17 @@
+/* 🎨 Fondo con degradado */
 body {
     font-family: Arial, sans-serif;
     margin: 0;
-    padding: 0;
-    background-color: #f4f4f4;
+    padding: 20px;
+    background: linear-gradient(135deg, #b51010, #353535);
+    color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 100vh;
 }
 
+/* 🔻 Encabezado */
 header {
     background-color: #b51010;
     color: white;
@@ -12,39 +19,48 @@ header {
     padding: 15px;
     font-size: 24px;
     font-weight: bold;
+    width: 100%;
 }
 
+/* 📦 Contenedor de documento */
 .document-container {
+    width: 95%;
     max-width: 800px;
-    margin: 20px auto;
     background: white;
     padding: 20px;
     border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.2);
+    margin-top: 20px;
+    color: black;
 }
 
+/* 📌 Título dentro del contenedor */
 .document-container h1 {
-    font-size: 26px;
+    font-size: 24px;
     color: #333;
     border-bottom: 2px solid #ddd;
     padding-bottom: 10px;
 }
 
+/* 📌 Texto dentro del documento */
 .document-container p {
     font-size: 16px;
     margin: 10px 0;
     color: #555;
 }
 
+/* 📌 Estilos para texto en negrita */
 .document-container strong {
     color: #222;
 }
 
+/* 📋 Lista de elementos dentro del documento */
 .document-container ul {
     list-style-type: none;
     padding: 0;
 }
 
+/* 📄 Elementos de la lista */
 .document-container ul li {
     background: #f8f8f8;
     margin: 5px 0;
@@ -53,8 +69,10 @@ header {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    font-size: 16px;
 }
 
+/* 📌 Enlaces dentro de la lista */
 .document-container ul li a {
     color: #b51010;
     text-decoration: none;
@@ -65,36 +83,92 @@ header {
     text-decoration: underline;
 }
 
-button {
+/* 🟥 Botón de acción principal */
+.btn-danger {
     display: block;
-    width: fit-content;
-    margin: 20px auto;
-    padding: 10px 15px;
     background-color: #b51010;
-    color: white;
     border: none;
-    cursor: pointer;
+    border-radius: 6px;
+    padding: 12px 18px;
+    color: white;
+    text-align: center;
     font-size: 16px;
-    border-radius: 5px;
-}
-button:hover {
-    background-color: #ee3737;
-}
-.edit-button {
-    display: block;
+    font-weight: bold;
+    cursor: pointer;
     width: fit-content;
+    transition: all 0.3s ease-in-out;
     margin: 20px auto;
-    padding: 10px 15px;
+}
+
+.btn-danger:hover {
+    background-color: #a30e0e;
+    transform: scale(1.03);
+}
+
+/* 🟢 Botón de edición */
+.btn-success {
+    display: block;
     background-color: #23b510;
-    color: white;
     border: none;
-    cursor: pointer;
+    border-radius: 6px;
+    padding: 12px 18px;
+    color: white;
+    text-align: center;
     font-size: 16px;
-    border-radius: 5px;
+    font-weight: bold;
+    cursor: pointer;
+    width: fit-content;
+    transition: all 0.3s ease-in-out;
+    margin: 20px auto;
 }
 
-.edit-button:hover {
+.btn-success:hover {
     background-color: #37ee55;
+    transform: scale(1.03);
 }
 
+/* 📱 Estilos responsive */
+@media (max-width: 768px) {
+    .document-container {
+        width: 98%;
+        padding: 18px;
+    }
 
+    h1 {
+        font-size: 22px;
+    }
+
+    .btn-danger,
+    .btn-success {
+        font-size: 14px;
+        padding: 10px;
+    }
+
+    .document-container ul li {
+        font-size: 14px;
+        flex-direction: column;
+        align-items: flex-start;
+    }
+}
+
+@media (max-width: 480px) {
+    h1 {
+        font-size: 20px;
+    }
+
+    .document-container {
+        width: 98%;
+        padding: 16px;
+    }
+
+    .btn-danger,
+    .btn-success {
+        width: 100%;
+        font-size: 14px;
+        padding: 10px;
+    }
+
+    .document-container ul li {
+        font-size: 13px;
+    }
+}

@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Buscar Autor</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="Estilos\estilos_autores.css">
+</head>
+<body>
+    <div id="search-author" class="section">
+        <h1>Buscar Autor</h1>
+        <div class="mb-3">
+            <label class="form-label">Buscar</label>
+            <div>
+                <input type="text" id="search-author-input" class="form-control" placeholder="Escribe el nombre del autor">
+                <button class="btn-danger" onclick="searchAuthors()">Buscar</button>
+            </div>
+        </div>
+
+        <div class="results-box">
+            <ul id="search-results"></ul>
+        </div>
+        <div class="d-grid gap-2 mt-3 d-md-flex justify-content-md-end">
+            <button class="btn-danger" onclick="window.location.href='registrar_autores.html'">Nuevo Autor</button>
+            <button class="btn-secondary" onclick="window.location.href='registrar_documento.html'">Volver</button>
+        </div>
+    </div>
+
+    <script src="Archivos js\funciones.js"></script>
+    <script>
+        let selectedAuthors = [];
+    
+        function searchAuthors() {
+            let searchInput = document.getElementById('search-author-input').value.trim();
+    
+            if (searchInput === "") {
+                document.getElementById("search-results").innerHTML = "<li>No se encontraron autores</li>";
+                return;
+            }
+    
+            fetch(`./php/buscar_autores.php?query=${encodeURIComponent(searchInput)}`)
+                .then(response => response.json())
+                .then(data => {
+                    let resultsBox = document.getElementById("search-results");
+                    resultsBox.innerHTML = "";
+    
+                    if (data.length === 0) {
+                        resultsBox.innerHTML = "<li>No se encontraron autores</li>";
+                    } else {
+                        data.forEach(autor => {
+                            let listItem = document.createElement("li");
+                            listItem.textContent = `${autor.nombre} ${autor.apellido}`;
+                            listItem.onclick = function () {
+                                selectAuthor(autor.id_Autores, autor.nombre, autor.apellido);
+                            };
+                            resultsBox.appendChild(listItem);
+                        });
+                    }
+                })
+                .catch(error => console.error("Error en la búsqueda:", error));
+        }
+    
+        function selectAuthor(id, nombre, apellido) {
+            // Evitar duplicados
+            if (!selectedAuthors.some(author => author.id === id)) {
+                selectedAuthors.push({ id, nombre, apellido });
+                localStorage.setItem("selectedAuthors", JSON.stringify(selectedAuthors));
+            }
+        }
+    </script>
+    
+    
+</body>
+</html>

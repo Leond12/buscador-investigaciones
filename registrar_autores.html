@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Añadir Autor</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="Estilos\estilos_autores.css">
+</head>
+<body>
+    <div id="add-author" class="section">
+        <h1 style="color: #333; text-align: center; margin-bottom: 20px;">Añadir Autor</h1>
+        <div class="mb-3">
+            <label class="form-label" >Nombre</label>
+            <input type="text" class="form-control" id="author-name" placeholder="Escribe el nombre">
+        </div>
+        <div class="mb-3">
+            <label class="form-label" >Apellido</label>
+            <input type="text" class="form-control" id="author-surname" placeholder="Escribe el apellido">
+        </div>
+        <div class="mb-3">
+            <label class="form-label" >CI</label>
+            <input type="text" class="form-control" id="author-ci" placeholder="Escribe el CI">
+        </div>
+        <div class="mb-3">
+            <label class="form-label" >Código U</label>
+            <input type="text" class="form-control" id="author-code" placeholder="Escribe el código U">
+        </div>
+
+        <div class="d-grid gap-2 mt-3">
+            <button class="btn-danger" onclick="addAuthor()">Añadir</button>
+            <button class="btn-secondary" onclick="goToSearchAuthor()">Cancelar</button>
+        </div>
+    </div>
+
+    <script src="Archivos js\funciones.js"></script>
+</body>
+</html>

@@ -1,53 +1,177 @@
+/* 🎨 Fondo con degradado */
 body {
     font-family: Arial, sans-serif;
     margin: 0;
-    padding: 0;
-    background-color: #f4f4f4;
+    padding: 20px;
+    background: linear-gradient(135deg, #b51010, #353535);
+    color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 100vh;
 }
 
+/* 📦 Contenedor principal */
 .container {
-    max-width: 600px;
-    margin: 50px auto;
+    width: 90%;
+    max-width: 700px;
     background: white;
     padding: 20px;
     border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.2);
+    margin-top: 30px;
 }
 
+/* 🏷️ Estilos del título */
 h1 {
     text-align: center;
-    color: #b51010;
+    font-size: 26px;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 20px;
     border-bottom: 2px solid #ddd;
     padding-bottom: 10px;
 }
 
+/* 📌 Estilos para etiquetas */
 label {
     font-weight: bold;
-    margin-top: 10px;
+    color: #333;
     display: block;
+    margin-top: 10px;
 }
 
+/* 🖊 Inputs */
 input {
     width: 100%;
     padding: 10px;
     margin-top: 5px;
+    border-radius: 6px;
     border: 1px solid #ccc;
-    border-radius: 5px;
-}
-
-button {
-    display: block;
-    width: 100%;
-    margin-top: 15px;
-    padding: 10px;
-    background-color: #b51010;
-    color: white;
-    border: none;
-    cursor: pointer;
     font-size: 16px;
-    border-radius: 5px;
+    transition: all 0.3s ease-in-out;
 }
 
-button:hover {
-    background-color: #ee3737;
+/* 🔵 Efecto de foco en inputs */
+input:focus {
+    border-color: #b51010;
+    outline: none;
+    box-shadow: 0px 0px 5px rgba(181, 16, 16, 0.4);
 }
+
+/* 📋 Lista de Autores Seleccionados */
+#author-results {
+    list-style: none;
+    padding: 0;
+    margin: 10px 0;
+    background: #f8f8f8;
+    border-radius: 6px;
+    padding: 10px;
+    max-height: 150px;
+    overflow-y: auto;
+    border: 1px solid #ccc;
+}
+
+/* 📌 Estilos de elementos en la lista */
+#author-results li {
+    padding: 6px;
+    border-bottom: 1px solid #ddd;
+    font-size: 16px;
+}
+
+/* 📌 Último elemento sin borde */
+#author-results li:last-child {
+    border-bottom: none;
+}
+
+/* 🟥 Botón principal */
+.btn-danger {
+    display: block;
+    background-color: #b51010;
+    border: none;
+    border-radius: 6px;
+    padding: 12px 18px;
+    color: white;
+    text-align: center;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    width: 100%;
+    transition: all 0.3s ease-in-out;
+    margin-top: 15px;
+}
+
+.btn-danger:hover {
+    background-color: #a30e0e;
+    transform: scale(1.03);
+}
+
+/* 🔄 Botón secundario */
+.btn-secondary {
+    display: block;
+    background-color: #555;
+    border: none;
+    border-radius: 6px;
+    padding: 12px 18px;
+    color: white;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    width: 100%;
+    transition: all 0.3s ease-in-out;
+    margin-top: 10px;
+}
+
+.btn-secondary:hover {
+    background-color: #777;
+    transform: scale(1.03);
+}
+
+/* 📱 Estilos responsive */
+@media (max-width: 768px) {
+    .container {
+        width: 95%;
+        padding: 18px;
+    }
+
+    h1 {
+        font-size: 24px;
+    }
+
+    .btn-danger,
+    .btn-secondary {
+        font-size: 14px;
+        padding: 10px;
+    }
+
+    input {
+        font-size: 14px;
+    }
+}
+
+@media (max-width: 480px) {
+    h1 {
+        font-size: 22px;
+    }
+
+    .container {
+        width: 98%;
+        padding: 16px;
+    }
+
+    .btn-danger,
+    .btn-secondary {
+        width: 100%;
+        font-size: 14px;
+        padding: 10px;
+    }
+
+    input {
+        font-size: 13px;
+    }
+
+    #author-results {
+        max-height: 120px;
+    }
+}
+

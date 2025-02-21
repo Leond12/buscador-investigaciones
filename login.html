@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="Estilos\estilo_registrar_usuario.css">
+</head>
+<body>
+  <main id="main-create-user" class="d-flex justify-content-center align-items-center vh-100">
+    <div class="login-card">
+        <h2 class="text-center fw-bold">🔐 Iniciar Sesión</h2>
+        <form action="PHP/validacion_usuario.php" method="POST">
+            <div>
+                <label for="usuario" class="form-label">👤 Usuario</label>
+                <input type="text" name="usuario" id="usuario" class="form-control" placeholder="Ingresa tu usuario" required>
+            </div>
+            <div>
+                <label for="contrasena" class="form-label">🔑 Contraseña</label>
+                <input type="password" name="contrasena" id="contrasena" class="form-control" placeholder="Ingresa tu contraseña" required>
+            </div>
+            <div class="form-check mt-2">
+                <input class="form-check-input" type="checkbox" id="show-password-login">
+                <label class="form-check-label" for="show-password-login">Mostrar contraseña</label>
+            </div>
+            <button type="submit" class="btn btn-danger w-100">Iniciar Sesión</button>
+            <a href="index.html" class="btn btn-secondary w-100 mt-2">⬅ Volver</a>
+        </form>  
+    </div>
+  </main>
+  
+  <script>
+    function togglePassword() {
+        var passwordInput = document.getElementById("pass-login");
+        passwordInput.type = passwordInput.type === "password" ? "text" : "password";
+    }
+</script>
+
+</body>
+</html>

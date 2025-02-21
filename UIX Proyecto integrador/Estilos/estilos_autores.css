@@ -1,44 +1,74 @@
+/* 🎨 Fondo con degradado más visible */
 body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 20px;
-    background-color: #f4f4f4;
+    background: linear-gradient(135deg, #b51010, #353535); /* Manteniendo coherencia con el login */
+    color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 100vh;
 }
 
+/* 🏷️ Estilos para el título principal */
 h1 {
-    color: #333;
+    color: white;
     text-align: center;
-    margin-bottom: 20px;
-}
-
-.section {
-    margin-bottom: 20px;
-}
-
-.section label {
-    display: block;
+    font-size: 28px;
     font-weight: bold;
+    margin-bottom: 20px;
+}
+
+/* 🔹 Sección de formularios */
+.section {
+    width: 100%;
+    max-width: 600px;
+    margin-bottom: 20px;
+    background: white;
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+/* 🏷️ Etiquetas de los formularios */
+.section label {
+    font-weight: bold;
+    color: #333;
+    display: block;
     margin-bottom: 5px;
 }
 
+/* 🖊 Estilo de los inputs */
 .section input[type="text"] {
-    width: 65%;
-    padding: 10px;
-    margin-bottom: 10px;
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 15px;
+    border-radius: 6px;
     border: 1px solid #ccc;
-    border-radius: 5px;
-    font-size: 14px;
+    font-size: 16px;
+    transition: all 0.3s ease-in-out;
 }
 
+/* 🔵 Efecto de foco en inputs */
+.section input[type="text"]:focus {
+    border-color: #b51010;
+    outline: none;
+    box-shadow: 0px 0px 8px rgba(181, 16, 16, 0.5);
+}
+
+/* 📦 Caja de resultados */
 .results-box {
     border: 1px solid #ccc;
-    padding: 10px;
+    padding: 15px;
     background-color: #fff;
-    border-radius: 5px;
-    height: 150px;
+    border-radius: 8px;
+    height: 180px;
     overflow-y: auto;
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.2);
 }
 
+/* 📋 Lista dentro de la caja de resultados */
 .results-box ul {
     list-style-type: none;
     padding: 0;
@@ -46,67 +76,83 @@ h1 {
 }
 
 .results-box li {
-    padding: 5px;
+    padding: 8px;
     border-bottom: 1px solid #eee;
+    font-size: 16px;
 }
 
+/* 📌 Último elemento sin borde */
 .results-box li:last-child {
     border-bottom: none;
 }
 
+/* 🟥 Botones */
 button {
-    padding: 10px 20px;
+    padding: 14px;
     background-color: #b51010;
     color: white;
     border: none;
-    border-radius: 5px;
+    border-radius: 8px;
     cursor: pointer;
     font-size: 16px;
-    margin-top: 10px;
+    font-weight: bold;
+    width: 100%;
+    transition: all 0.3s ease-in-out;
 }
 
 button:hover {
-    background-color: #ee3737;
+    background-color: #a30e0e;
+    transform: scale(1.05);
 }
 
-/* Estilos responsive */
+/* 📱 Estilos responsive */
 @media (max-width: 768px) {
     body {
         padding: 10px;
     }
 
     h1 {
-        font-size: 22px;
+        font-size: 24px;
+    }
+
+    .section {
+        width: 90%;
+        padding: 20px;
     }
 
     button {
-        font-size: 14px;
-        padding: 8px 15px;
+        font-size: 15px;
+        padding: 12px;
     }
 
-    .section input[type="text"], .form-control {
-        padding: 8px;
-        font-size: 13px;
+    .section input[type="text"] {
+        padding: 10px;
+        font-size: 14px;
     }
 }
 
 @media (max-width: 480px) {
     h1 {
-        font-size: 20px;
+        font-size: 22px;
+    }
+
+    .section {
+        width: 95%;
+        padding: 18px;
     }
 
     button {
         width: 100%;
         font-size: 14px;
-        padding: 10px;
+        padding: 12px;
     }
 
-    .section input[type="text"], .form-control {
-        padding: 6px;
-        font-size: 12px;
+    .section input[type="text"] {
+        padding: 8px;
+        font-size: 13px;
     }
 
     .results-box {
-        height: 120px;
+        height: 140px;
     }
 }

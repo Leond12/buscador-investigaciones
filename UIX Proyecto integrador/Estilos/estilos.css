@@ -1,382 +1,316 @@
+/* 🎨 Fondo con degradado */
 body {
-    body {
-        font-family: Arial, sans-serif;
-        margin: 0;
-        padding: 0;
-        background-color: #f4f4f4;
-    }
-    
-    
-    .search-results-container {
-        width: 50%;
-        max-width: 600px;
-        background: white;
-        border: 1px solid #ccc;
-        border-radius: 10px;
-        margin: 20px auto;
-        padding: 15px;
-        max-height: 400px;
-        overflow-y: auto;
-        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    }
-    
-    .result-item {
-        padding: 15px;
-        border-bottom: 1px solid #ddd;
-        border-radius: 8px;
-        background-color: #fafafa;
-        display: flex;
-        flex-direction: column;
-        align-items: flex-start;
-        margin-bottom: 10px;
-    }
-    
-    .result-item:last-child {
-        border-bottom: none;
-    }
-    
-    .result-item h4 {
-        margin: 0;
-        font-size: 16px;
-        color: #333;
-    }
-    
-    .result-item p {
-        margin: 5px 0;
-        font-size: 14px;
-        color: #666;
-    }
-    
-    .result-item button {
-        background-color: #b51010;
-        color: white;
-        border: none;
-        padding: 8px 12px;
-        cursor: pointer;
-        border-radius: 5px;
-        align-self: flex-start;
-        margin-top: 5px;
-    }
-    
-    .result-item button:hover {
-        background-color: #ee3737;
-    }
-    
-    .result-item .edit-button {
-        background-color: #10b52b;
-        color: white;
-        border: none;
-        padding: 8px 12px;
-        cursor: pointer;
-        border-radius: 5px;
-        align-self: flex-start;
-        margin-top: 5px;
-    }
-    
-    .result-item .edit-button:hover {
-        background-color: #86ee37;
-    }
-    
-    
-    header {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        padding: 10px 20px;
-        background-color: #b51010;
-        color: white;
-    }
-    
-    header img {
-        height: 40px;
-    }
-    
-    header button {
-        padding: 10px 20px;
-        font-size: 16px;
-        background-color: #b51010;
-        color: white;
-        border: none;
-        border-radius: 5px;
-        cursor: pointer;
-    }
-    
-    header button:hover {
-        background-color: #ee3737;
-    }
-    
-    .logo-container {
-        text-align: center;
-        margin: 20px 0;
-    }
-    
-    .logo-container img {
-        max-width: 500px;  /* Ajusta este valor según el tamaño que desees */
-        width: 100%;
-        height: auto;
-    }
-    
-    .search-container {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        margin-top: 20px;
-    }
-    
-    .search-container input {
-        padding: 10px;
-        width: 300px;
-        border: 1px solid #ccc;
-        border-radius: 5px;
-    }
-    
-    .search-container button {
-        padding: 10px;
-        margin-left: 10px;
-        background-color: #b51010;
-        color: white;
-        border: none;
-        cursor: pointer;
-        border-radius: 5px;
-    }
-    
-    .search-container button:hover {
-        background-color: #ee3737;
-    }
-    
-    .cards-container {
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: center;
-        gap: 20px;
-        padding: 20px;
-    }
-    
-    .card {
-        background-color: white;
-        border: 1px solid #ccc;
-        border-radius: 10px;
-        width: 200px;
-        padding: 15px;
-        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-        text-align: center;
-    }
-    
-    .card h3 {
-        margin: 0 0 10px;
-        font-size: 18px;
-    }
-    
-    .card p {
-        margin: 0;
-        font-size: 14px;
-        color: #555;
-    }
-    
-    .upload-button {
-        position: fixed;
-        bottom: 20px;
-        right: 20px;
-        padding: 15px 30px;
-        font-size: 16px;
-        background-color: #b51010;
-        color: white;
-        border: none;
-        border-radius: 50px;
-        cursor: pointer;
-        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    }
-    
-    .upload-button:hover {
-        background-color: #ee3737;
-    }
-    
-    /* Estilos responsive */
-    @media (max-width: 768px) {
-        header {
-            flex-direction: column;
-            text-align: center;
-        }
-    
-        header img {
-            margin-bottom: 10px;
-        }
-    
-        .search-container input[type="text"] {
-            width: 80%;
-        }
-    
-        .cards-container {
-            padding: 10px;
-            gap: 10px;
-        }
-    
-        .card {
-            width: 100%;
-            max-width: 300px;
-        }
-    
-        .upload-button {
-            padding: 10px 20px;
-            font-size: 14px;
-        }
-    }
-    
-    @media (max-width: 480px) {
-        .search-container input[type="text"] {
-            width: 100%;
-        }
-    
-        header button {
-            width: 100%;
-            padding: 10px;
-        }
-    }
-    
-    #main-login {
-        height: 100vh;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-    }
-    
-    .card {
-        width: 100%;
-        max-width: 400px;
-        padding: 20px;
-        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-        border-radius: 10px;
-        background-color: white;
-    }
-    
-    .btn-primary {
-        background-color: #b51010;
-        border: none;
-        border-radius: 5px;
-        padding: 10px;
-        color: white;
-        font-size: 16px;
-        cursor: pointer;
-    }
-    
-    .btn-primary:hover {
-        background-color: #ee3737;
-    }
-    
-    .btn-secondary {
-        background-color: #555;
-        border: none;
-        border-radius: 5px;
-        padding: 10px 20px;
-        color: white;
-        font-size: 16px;
-        cursor: pointer;
-    }
-    
-    .btn-secondary:hover {
-        background-color: #777;
-    }
-    
-    .form-check-label {
-        font-size: 14px;
-        color: #555;
-    }
-    
-    a.text-decoration-none {
-        color: #b51010;
-    }
-    
-    a.text-decoration-none:hover {
-        color: #ee3737;
-    }
-    
-    /* Estilos responsive para el login */
-    @media (max-width: 768px) {
-        #main-login {
-            padding: 10px;
-        }
-    
-        .card {
-            padding: 15px;
-        }
-    
-        .btn-primary, .btn-secondary {
-            font-size: 14px;
-            padding: 8px 15px;
-        }
-    }
-    
-    @media (max-width: 480px) {
-        .card {
-            padding: 10px;
-        }
-    
-        .btn-primary, .btn-secondary {
-            width: 100%;
-            padding: 10px;
-            font-size: 14px;
-        }
-    
-        .form-check-label {
-            font-size: 12px;
-        }
-    }
-    /* 🔹 Fijar los botones en la parte inferior derecha */
-.fixed-buttons-container {
-    position: fixed;  /* Fija la posición en la pantalla */
-    bottom: 20px;     /* Distancia desde la parte inferior */
-    right: 20px;      /* Distancia desde la derecha */
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 20px;
+    background: linear-gradient(135deg, #b51010, #353535);
+    color: white;
     display: flex;
     flex-direction: column;
-    gap: 10px;        /* Espaciado entre botones */
-    z-index: 1000;    /* Asegura que estén siempre visibles */
+    align-items: center;
+    min-height: 100vh;
 }
 
-/* 🔘 Estilos de botones */
-.fixed-buttons-container button {
-    width: 160px;         /* Tamaño uniforme */
-    font-weight: bold;    /* Texto más llamativo */
-    padding: 10px 15px;
-    border-radius: 5px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Agrega sombra ligera */
+/* 🔻 Encabezado */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px 20px;
+    background: linear-gradient(90deg, #8c0d0d, #b51010); /* Degradado más oscuro */
+    color: white;
+    width: 100%;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.3); /* Sombra sutil para dar profundidad */
+}
+
+/* 🏷️ Logo dentro del encabezado */
+header img {
+    height: 40px;
+}
+
+/* 🏷️ Texto dentro del header */
+header h3 {
+    font-size: 22px;
+    font-weight: bold;
+    margin: 0;
+}
+
+/* 📌 Botón de acceso en el header */
+header button {
+    padding: 8px 15px;
+    font-size: 14px;
+    background-color: white;
+    color: #b51010;
     border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: all 0.3s ease-in-out;
 }
 
-/* 🎨 Personalización de colores */
+header button:hover {
+    background-color: #f0f0f0;
+    transform: scale(1.05);
+}
+
+/* 📦 Contenedor de resultados */
+.search-results-container {
+    width: 50%;
+    max-width: 600px;
+    background: white;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    margin: 20px auto;
+    padding: 15px;
+    max-height: 400px;
+    overflow-y: auto;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+    color: black;
+}
+
+/* 🎯 Resultados individuales */
+.result-item {
+    padding: 15px;
+    border-bottom: 1px solid #ddd;
+    border-radius: 8px;
+    background-color: #fafafa;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-bottom: 10px;
+}
+
+.result-item:last-child {
+    border-bottom: none;
+}
+
+/* 🏷️ Texto dentro de resultados */
+.result-item h4 {
+    margin: 0;
+    font-size: 16px;
+    color: #333;
+}
+
+.result-item p {
+    margin: 5px 0;
+    font-size: 14px;
+    color: #666;
+}
+
+/* 🟥 Botón de acción principal */
+.result-item button {
+    background-color: #b51010;
+    color: white;
+    border: none;
+    padding: 8px 12px;
+    cursor: pointer;
+    border-radius: 5px;
+    align-self: flex-start;
+    margin-top: 5px;
+}
+
+.result-item button:hover {
+    background-color: #ee3737;
+}
+
+/* 🟢 Botón de edición */
+.result-item .edit-button {
+    background-color: #10b52b;
+    color: white;
+    border: none;
+    padding: 8px 12px;
+    cursor: pointer;
+    border-radius: 5px;
+    align-self: flex-start;
+    margin-top: 5px;
+}
+
+.result-item .edit-button:hover {
+    background-color: #86ee37;
+}
+
+/* 📌 Contenedor del logo */
+.logo-container {
+    text-align: center;
+    margin: 20px 0;
+}
+
+/* 📌 Imagen dentro del logo */
+.logo-container img {
+    max-width: 500px;
+    width: 100%;
+    height: auto;
+}
+
+/* 📌 Barra de búsqueda */
+.search-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+}
+
+/* 🔍 Input de búsqueda */
+.search-container input {
+    padding: 10px;
+    width: 300px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+/* 🔎 Botón de búsqueda */
+.search-container button {
+    padding: 10px;
+    margin-left: 10px;
+    background-color: #b51010;
+    color: white;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.search-container button:hover {
+    background-color: #ee3737;
+}
+
+/* 📦 Contenedor de tarjetas */
+.cards-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    padding: 20px;
+}
+
+/* 📌 Tarjetas */
+.card {
+    background-color: white;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    width: 200px;
+    padding: 15px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    color: black;
+}
+
+/* 📌 Texto dentro de la tarjeta */
+.card h3 {
+    margin: 0 0 10px;
+    font-size: 18px;
+}
+
+.card p {
+    margin: 0;
+    font-size: 14px;
+    color: #555;
+}
+
+/* 🎯 Botones fijos en la parte inferior derecha */
+.fixed-buttons-container {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    z-index: 1000;
+}
+
+/* 🟢 Botón de Crear Cuenta */
 #registrar-button {
     background-color: white;
     color: #b51010;
     border: 2px solid #b51010;
+    border-radius: 8px;
+    padding: 12px 20px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
 }
 
 #registrar-button:hover {
-    background-color: #b51010;
-    color: white;
+    background-color: #f8f8f8;
+    transform: scale(1.05);
 }
 
-/* 🔴 Botón "Subir Documento" */
+/* 🟥 Botón de Subir Documento */
 #upload-button {
     background-color: #b51010;
     color: white;
+    border: none;
+    border-radius: 8px;
+    padding: 12px 20px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
 }
 
 #upload-button:hover {
-    background-color: #d32f2f;
+    background-color: #a30e0e;
+    transform: scale(1.05);
 }
 
-/* 📱 Ajuste para pantallas más pequeñas */
+/* 📱 Estilos responsive */
 @media (max-width: 768px) {
-    .fixed-buttons-container {
-        right: 10px;  /* Ajusta margen para pantallas pequeñas */
-        bottom: 10px;
+    header {
+        flex-direction: column;
+        text-align: center;
     }
 
-    .fixed-buttons-container button {
-        width: 140px;
+    header img {
+        margin-bottom: 10px;
+    }
+
+    .search-container input {
+        width: 80%;
+    }
+
+    .cards-container {
+        padding: 10px;
+        gap: 10px;
+    }
+
+    .card {
+        width: 100%;
+        max-width: 300px;
+    }
+
+    .fixed-buttons-container {
+        bottom: 15px;
+        right: 15px;
+        gap: 8px;
+    }
+
+    #registrar-button,
+    #upload-button {
         font-size: 14px;
+        padding: 10px 16px;
     }
 }
 
+@media (max-width: 480px) {
+    .search-container input {
+        width: 100%;
+    }
 
+    header button {
+        width: 100%;
+        padding: 10px;
+    }
+
+    .fixed-buttons-container {
+        bottom: 10px;
+        right: 10px;
+        gap: 6px;
+    }
+
+    #registrar-button,
+    #upload-button {
+        font-size: 13px;
+        padding: 10px;
+        width: 140px;
+    }
 }
